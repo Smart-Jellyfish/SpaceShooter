@@ -3,19 +3,22 @@ extends CharacterBody2D
 #
 
 # Player Health
-#	100% = Full Health
+#	100% = Main Ship - Base - Full health.png
 #	
-#	< 20% = Very Damaged
+#	< 20% = Main Ship - Base - Very Damaged
 
 const SPEED = 300.0
 #const JUMP_VELOCITY = -400.0
-#
-## Get the gravity from the project settings to be synced with RigidBody nodes.
-#var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-#
-#
+
 func _process(delta):
-	var direction = Input.get_vector("Left", "Right", "Up", "Down")
-	velocity = direction * SPEED
-	
-	move_and_slide()
+	pass
+
+func _input(event):	
+	if event.is_action("Left") or event.is_action("Right") or event.is_action("Up") or event.is_action("Down"):
+		var direction = Input.get_vector("Left", "Right", "Up", "Down")
+		velocity = direction * SPEED
+		move_and_slide()
+	elif event.is_action_pressed("Fire Primary"):
+		print("Firing primary")
+	elif event.is_action_pressed("Fire Secondary"):
+		print("Firing secondary")
