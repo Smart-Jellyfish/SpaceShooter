@@ -15,8 +15,8 @@ position = Vector2(786, 355)
 [node name="Background" type="Sprite2D" parent="."]
 
 [node name="BlueNebula01-1024x1024" type="Sprite2D" parent="Background"]
-position = Vector2(-210, -37.5)
-scale = Vector2(1.17187, 0.688477)
+position = Vector2(-210, -30.9999)
+scale = Vector2(1.17187, 0.675781)
 texture = ExtResource("1_2x43n")
 
 [node name="Meteor" type="Area2D" parent="."]
