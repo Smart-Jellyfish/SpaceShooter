@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://qb0u7fvksco"]
+
+[ext_resource type="Texture2D" uid="uid://5448ahs1div6" path="res://Assets/Images/Asteroids/Asteroid 01 - Base.png" id="1_gjjk4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h1nsi"]
+radius = 18.0
+
+[node name="Meteor" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gjjk4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_h1nsi")
