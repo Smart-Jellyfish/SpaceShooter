@@ -14,11 +14,8 @@ const SPEED = 300.0
 #var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #
 #
-func process(delta):
-	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+func _process(delta):
+	var direction = Input.get_vector("Left", "Right", "Up", "Down")
+	velocity = direction * SPEED
+	
 	move_and_slide()
