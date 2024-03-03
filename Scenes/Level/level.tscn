@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwmevtv7xx4l8"]
+
+[ext_resource type="Texture2D" uid="uid://b8fpmtdj0jiua" path="res://Assets/Images/Backgrounds/Blue Nebula/Blue_Nebula_01.png" id="1_2x43n"]
+[ext_resource type="PackedScene" uid="uid://cq5l5aa2ugmc" path="res://Scenes/Player/player.tscn" id="1_8qg1i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djx6g"]
+size = Vector2(1152, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt652"]
+size = Vector2(23, 648)
+
+[node name="Level" type="Node2D"]
+position = Vector2(786, 355)
+
+[node name="Background" type="Sprite2D" parent="."]
+
+[node name="BlueNebula01-1024x1024" type="Sprite2D" parent="Background"]
+position = Vector2(-210, -37.5)
+scale = Vector2(1.17187, 0.688477)
+texture = ExtResource("1_2x43n")
+
+[node name="Meteor" type="Area2D" parent="."]
+visible = false
+
+[node name="Player" parent="." instance=ExtResource("1_8qg1i")]
+
+[node name="Borders" type="Node2D" parent="."]
+
+[node name="TopBorder" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/TopBorder"]
+position = Vector2(-210, -365)
+shape = SubResource("RectangleShape2D_djx6g")
+
+[node name="LeftBorder" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/LeftBorder"]
+position = Vector2(-798, -31)
+shape = SubResource("RectangleShape2D_tt652")
+
+[node name="BottomBorder" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/BottomBorder"]
+position = Vector2(-210, 303)
+shape = SubResource("RectangleShape2D_djx6g")
+
+[node name="RightBorder" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/RightBorder"]
+position = Vector2(378, -31)
+shape = SubResource("RectangleShape2D_tt652")
