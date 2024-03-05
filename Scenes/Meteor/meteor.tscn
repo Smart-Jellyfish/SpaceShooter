@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_h1nsi"]
 radius = 18.0
 
-[node name="Meteor" type="CharacterBody2D"]
+[node name="Meteor" type="Area2D"]
 script = ExtResource("1_wdrnm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
