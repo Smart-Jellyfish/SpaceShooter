@@ -32,3 +32,8 @@ func _physics_process(delta):
 		rotation += 1 * rotation_speed * delta
 	else:
 		rotation += -1 * rotation_speed * delta
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	print("destroying asteroid")
+	call_deferred("free")
