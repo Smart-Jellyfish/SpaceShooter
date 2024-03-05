@@ -20,6 +20,7 @@ size = Vector2(10, 10)
 script = ExtResource("1_nhu14")
 
 [node name="Timer" type="Timer" parent="."]
+autostart = true
 
 [node name="Background" type="Sprite2D" parent="."]
 centered = false
@@ -30,7 +31,6 @@ offset_bottom = 40.0
 texture = ExtResource("2_o8wi1")
 
 [node name="Meteor" parent="." instance=ExtResource("2_tkfv2")]
-visible = false
 script = ExtResource("4_kdpwa")
 
 [node name="Player" parent="." instance=ExtResource("1_8qg1i")]
@@ -38,22 +38,20 @@ position = Vector2(364, 304)
 script = ExtResource("5_q802x")
 
 [node name="Borders" type="Node2D" parent="."]
+visible = false
 
 [node name="TopBorder" type="StaticBody2D" parent="Borders"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/TopBorder"]
 shape = SubResource("RectangleShape2D_hndov")
 
 [node name="LeftBorder" type="StaticBody2D" parent="Borders"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/LeftBorder"]
 position = Vector2(-798, -31)
 shape = SubResource("RectangleShape2D_tt652")
 
 [node name="BottomBorder" type="StaticBody2D" parent="Borders"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/BottomBorder"]
 visible = false
@@ -63,3 +61,5 @@ shape = SubResource("RectangleShape2D_djx6g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/RightBorder"]
 shape = SubResource("RectangleShape2D_tt652")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

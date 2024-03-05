@@ -62,3 +62,7 @@ func set_background(width, height, randomise):
 func get_viewport_dimensions():
 	var viewport_dimensions = get_viewport_rect()
 	return  { "width": viewport_dimensions.size[0], "height": viewport_dimensions.size[1] }
+
+
+func _on_timer_timeout():
+	print("Timer goes boom")
