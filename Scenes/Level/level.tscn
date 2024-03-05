@@ -56,6 +56,6 @@ shape = SubResource("RectangleShape2D_djx6g")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/RightBorder"]
 shape = SubResource("RectangleShape2D_tt652")
 
-[node name="Meteors" type="Node2D" parent="."]
+[node name="Asteroids" type="Node2D" parent="."]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

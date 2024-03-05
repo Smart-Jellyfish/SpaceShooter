@@ -1,6 +1,6 @@
 extends Node2D
 
-var meteor_scene: PackedScene = load("res://Scenes/Meteor/meteor.tscn")
+var asteroid_scene: PackedScene = load("res://Scenes/Asteroid/asteroid.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -67,5 +67,5 @@ func get_viewport_dimensions():
 
 
 func _on_timer_timeout():
-	var meteor = meteor_scene.instantiate()
-	$Meteors.add_child(meteor)
+	var asteroid = asteroid_scene.instantiate()
+	$Asteroids.add_child(asteroid)
