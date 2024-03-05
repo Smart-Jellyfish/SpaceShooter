@@ -1,5 +1,7 @@
 extends Node2D
 
+var meteor_scene: PackedScene = load("res://Scenes/Meteor/meteor.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	initialise_game()
@@ -65,4 +67,5 @@ func get_viewport_dimensions():
 
 
 func _on_timer_timeout():
-	print("Timer goes boom")
+	var meteor = meteor_scene.instantiate()
+	$Meteors.add_child(meteor)

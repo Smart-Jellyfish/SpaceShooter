@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://cq5l5aa2ugmc"]
 
-[ext_resource type="Script" path="res://Scenes/Player/Player.gd" id="1_4u2e1"]
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_edais"]
 [ext_resource type="Texture2D" uid="uid://cry5ldvw70col" path="res://Assets/Images/Ship/Main Ship - Base - Full health.png" id="2_k5msw"]
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_4u2e1")
+script = ExtResource("1_edais")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_k5msw")

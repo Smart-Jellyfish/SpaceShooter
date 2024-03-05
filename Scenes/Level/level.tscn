@@ -1,11 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwmevtv7xx4l8"]
+[gd_scene load_steps=7 format=3 uid="uid://dwmevtv7xx4l8"]
 
 [ext_resource type="PackedScene" uid="uid://cq5l5aa2ugmc" path="res://Scenes/Player/player.tscn" id="1_8qg1i"]
 [ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_nhu14"]
 [ext_resource type="Texture2D" uid="uid://6jgj0vxm481j" path="res://Assets/Images/Backgrounds/Nebulas/Nebula_24.png" id="2_o8wi1"]
-[ext_resource type="PackedScene" uid="uid://qb0u7fvksco" path="res://Scenes/Meteor/meteor.tscn" id="2_tkfv2"]
-[ext_resource type="Script" path="res://Scenes/Meteor/meteor.gd" id="4_kdpwa"]
-[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="5_q802x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hndov"]
 size = Vector2(10, 10)
@@ -30,12 +27,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_o8wi1")
 
-[node name="Meteor" parent="." instance=ExtResource("2_tkfv2")]
-script = ExtResource("4_kdpwa")
-
 [node name="Player" parent="." instance=ExtResource("1_8qg1i")]
 position = Vector2(364, 304)
-script = ExtResource("5_q802x")
 
 [node name="Borders" type="Node2D" parent="."]
 visible = false
@@ -61,5 +54,7 @@ shape = SubResource("RectangleShape2D_djx6g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/RightBorder"]
 shape = SubResource("RectangleShape2D_tt652")
+
+[node name="Meteors" type="Node2D" parent="."]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
