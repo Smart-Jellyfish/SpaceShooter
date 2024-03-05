@@ -35,23 +35,27 @@ position = Vector2(364, 304)
 visible = false
 
 [node name="TopBorder" type="StaticBody2D" parent="Borders"]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/TopBorder"]
 shape = SubResource("RectangleShape2D_hndov")
 
 [node name="LeftBorder" type="StaticBody2D" parent="Borders"]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/LeftBorder"]
 position = Vector2(-798, -31)
 shape = SubResource("RectangleShape2D_tt652")
 
 [node name="BottomBorder" type="StaticBody2D" parent="Borders"]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/BottomBorder"]
 visible = false
 shape = SubResource("RectangleShape2D_djx6g")
 
 [node name="RightBorder" type="StaticBody2D" parent="Borders"]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/RightBorder"]
 shape = SubResource("RectangleShape2D_tt652")

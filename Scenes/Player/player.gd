@@ -10,7 +10,7 @@ extends CharacterBody2D
 
 const SPEED :float = 400.0
 
-func _process(delta):
+func _process(_delta):
 	var input_direction = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = input_direction * SPEED
 	move_and_slide()

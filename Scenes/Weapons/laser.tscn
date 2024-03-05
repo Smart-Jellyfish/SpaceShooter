@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://04gpqrs4us61"]
+
+[node name="laser" type="Node2D"]
+light_mask = 8
+visibility_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

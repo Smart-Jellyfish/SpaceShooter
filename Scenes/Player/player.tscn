@@ -1,9 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://cq5l5aa2ugmc"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_edais"]
-[ext_resource type="Texture2D" uid="uid://cry5ldvw70col" path="res://Assets/Images/Ship/Main Ship - Base - Full health.png" id="2_k5msw"]
+[ext_resource type="Texture2D" uid="uid://cry5ldvw70col" path="res://Assets/Images/Ship/Body/Main Ship - Base - Full health.png" id="2_k5msw"]
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 6
 script = ExtResource("1_edais")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

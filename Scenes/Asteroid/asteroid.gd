@@ -5,6 +5,8 @@ var rotate_clockwise: bool
 var velocity: float
 var direction_x: float
 
+# TODO - Randomise the Asteroid graphic
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Set random rotation speed
@@ -34,5 +36,4 @@ func _physics_process(delta):
 		rotation += -1 * rotation_speed * delta
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	print("destroying asteroid")
 	call_deferred("free")
