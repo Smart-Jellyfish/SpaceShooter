@@ -7,7 +7,7 @@ extends CharacterBody2D
 #	
 #	< 20% = Main Ship - Base - Very Damaged
 
-const SPEED = 300.0
+const SPEED = 500.0
 #const JUMP_VELOCITY = -400.0
 
 func _process(delta):
