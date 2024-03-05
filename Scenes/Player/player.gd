@@ -7,18 +7,18 @@ extends CharacterBody2D
 #	
 #	< 20% = Main Ship - Base - Very Damaged
 
-const SPEED = 500.0
-#const JUMP_VELOCITY = -400.0
+const SPEED = 400.0
 
 func _process(delta):
-	pass
+	var input_direction = Input.get_vector("Left", "Right", "Up", "Down")
+	velocity = input_direction * SPEED
+	move_and_slide()
 
-func _input(event):	
-	if event.is_action("Left") or event.is_action("Right") or event.is_action("Up") or event.is_action("Down"):
-		var direction = Input.get_vector("Left", "Right", "Up", "Down")
-		velocity = direction * SPEED
-		move_and_slide()
-	elif event.is_action_pressed("Fire Primary"):
+#	var action_key = Input.ge
+
+
+func _input(event):
+	if event.is_action_pressed("Fire Primary"):
 		print("Firing primary")
 	elif event.is_action_pressed("Fire Secondary"):
 		print("Firing secondary")
