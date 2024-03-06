@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ckpwdc02jcewf"]
 
-[ext_resource type="Script" path="res://Scenes/Weapons/laser.gd" id="1_4mum0"]
+[ext_resource type="Script" path="res://Scenes/Weapons/missile.gd" id="1_p5ii3"]
 [ext_resource type="Texture2D" uid="uid://hrpf0efqpiwr" path="res://Assets/Images/Ship/Weapons/missile.png" id="2_b8dho"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_blsvv"]
@@ -9,7 +9,7 @@ size = Vector2(2, 9)
 [node name="missile" type="Area2D"]
 light_mask = 8
 visibility_layer = 2
-script = ExtResource("1_4mum0")
+script = ExtResource("1_p5ii3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_b8dho")
