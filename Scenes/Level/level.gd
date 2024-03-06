@@ -1,6 +1,8 @@
 extends Node2D
 
 var asteroid_scene: PackedScene = load("res://Scenes/Asteroid/asteroid.tscn")
+var laser_scene: PackedScene = load("res://Scenes/Weapons/laser.tscn")
+var missile_scene: PackedScene = load("res://Scenes/Weapons/missile.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -71,11 +73,11 @@ func _on_timer_timeout():
 	$Asteroids.add_child(asteroid)
 
 func _on_player_laser_fired(current_position):
-	print("laser fired")
-	print(current_position)
-	
-
+	var laser = laser_scene.instantiate()
+	laser.position = current_position
+	$Weapons.add_child(laser)
 
 func _on_player_misslile_fired(current_position):
-	print("Misile fired")
-	print(current_position)
+	var missile = missile_scene.instantiate()
+	missile.position = current_position
+	$Weapons.add_child(missile)

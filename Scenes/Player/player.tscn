@@ -12,3 +12,17 @@ texture = ExtResource("2_k5msw")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(0, -13, 5, -6, 5, -4, 15, 6, 15, 11, 5, 7, 3, 7, 3, 13, -3, 13, -3, 7, -6, 7, -15, 11, -15, 5, -5, -4, -5, -6)
+
+[node name="WeaponStartPosition" type="Marker2D" parent="."]
+position = Vector2(0, -22)
+
+[node name="LaserCooldownTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="MissileCooldownTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="LaserCooldownTimer" to="." method="_on_laser_cooldown_timer_timeout"]
+[connection signal="timeout" from="MissileCooldownTimer" to="." method="_on_missile_cooldown_timer_timeout"]
