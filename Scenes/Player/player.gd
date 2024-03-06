@@ -1,7 +1,7 @@
 extends CharacterBody2D
 #
-#
-
+signal laser_fired(current_position)
+signal misslile_fired(current_position)
 # Player Health
 #	> 81% = Main Ship - Base - Full health.png
 # 	< 80% = Main Ship - Base Slight damage.png
@@ -17,6 +17,6 @@ func _process(_delta):
 
 func _input(event):
 	if event.is_action_pressed("Fire Primary"):
-		print("Firing primary")
+		laser_fired.emit(position)
 	elif event.is_action_pressed("Fire Secondary"):
-		print("Firing secondary")
+		misslile_fired.emit(position)

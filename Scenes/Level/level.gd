@@ -69,3 +69,13 @@ func get_viewport_dimensions():
 func _on_timer_timeout():
 	var asteroid = asteroid_scene.instantiate()
 	$Asteroids.add_child(asteroid)
+
+func _on_player_laser_fired(current_position):
+	print("laser fired")
+	print(current_position)
+	
+
+
+func _on_player_misslile_fired(current_position):
+	print("Misile fired")
+	print(current_position)
