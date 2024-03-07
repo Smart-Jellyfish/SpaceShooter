@@ -13,12 +13,15 @@ config_version=5
 config/name="SpaceShooter"
 run/main_scene="res://Scenes/Level/level.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="res://Assets/Images/splash.png"
+config/icon="res://icon.png"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=1016
+window/size/mode=3
 
 [dotnet]
 
