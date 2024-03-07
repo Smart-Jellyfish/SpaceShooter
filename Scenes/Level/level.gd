@@ -8,6 +8,9 @@ var missile_scene: PackedScene = load("res://Scenes/Weapons/missile.tscn")
 func _ready():
 	initialise_game()
 
+func _process(delta):
+	$CanvasLayer/PlanetDistance.text = "Planet: " + str(snappedf($DistanceToPlanetTimer.time_left, 0.01))
+
 # Initialises the game.
 func initialise_game():
 	# Bind the viewport_resized function to the root size_changed event.
@@ -68,10 +71,6 @@ func get_viewport_dimensions():
 	return  { "width": viewport_dimensions.size[0], "height": viewport_dimensions.size[1] }
 
 
-func _on_timer_timeout():
-	var asteroid = asteroid_scene.instantiate()
-	$Asteroids.add_child(asteroid)
-
 func _on_player_laser_fired(current_position):
 	var laser = laser_scene.instantiate()
 	laser.position = current_position
@@ -81,3 +80,12 @@ func _on_player_misslile_fired(current_position):
 	var missile = missile_scene.instantiate()
 	missile.position = current_position
 	$Weapons.add_child(missile)
+
+
+func _on_asteroid_timeout_timeout():
+	var asteroid = asteroid_scene.instantiate()
+	$Asteroids.add_child(asteroid)
+
+
+func _on_distance_to_planet_timer_timeout():
+	print("planet is here")
