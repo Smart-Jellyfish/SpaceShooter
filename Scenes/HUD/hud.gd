@@ -2,6 +2,9 @@ extends CanvasLayer
 
 static var texture = load("res://Assets/Images/Ship/life.png")
 
+func _process(delta):
+	$MarginContainer/Score.text = "Score: " + str(Global.score)
+
 func set_health(health):
 	# remove all children from the LifeContainer
 	for child in $MarginContainer2/LifeContainer.get_children():

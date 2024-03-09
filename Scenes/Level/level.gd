@@ -11,11 +11,13 @@ func _ready():
 	initialise_game()
 
 func _process(delta):
+	
 	pass
 	#$CanvasLayer/PlanetDistance.text = "Planet: " + str(snappedf($DistanceToPlanetTimer.time_left, 0.01))
 
 # Initialises the game.
 func initialise_game():
+	Global.score = 0
 	# Bind the viewport_resized function to the root size_changed event.
 	get_tree().get_root().size_changed.connect(viewport_resized)
 	
@@ -89,14 +91,12 @@ func _on_player_misslile_fired(current_position):
 func _on_asteroid_timeout_timeout():
 	var asteroid = asteroid_scene.instantiate()
 	$Asteroids.add_child(asteroid)
-
 	asteroid.connect('collision_with_player', _on_asteroid_collision_with_player)
 
+# TODO - Add to the score when we destroy an asteroid
+
 func _on_asteroid_collision_with_player():
-	print("asteroid collided with player in level")
-	
 	get_tree().call_group('HUD', 'set_health', health)
-	
 	health -= 1
 	if (health < 0):
 		get_tree().change_scene_to_file("res://Scenes/GameOver/game_over.tscn")

@@ -40,7 +40,7 @@ theme_override_font_sizes/font_size = 40
 text = "Game Over"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="Background/CenterContainer/VBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="Background/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_h7mj8")
 theme_override_font_sizes/font_size = 25
