@@ -10,8 +10,7 @@ var health: int = 5
 func _ready():
 	initialise_game()
 
-func _process(delta):
-	
+func _process(_delta):
 	pass
 	#$CanvasLayer/PlanetDistance.text = "Planet: " + str(snappedf($DistanceToPlanetTimer.time_left, 0.01))
 

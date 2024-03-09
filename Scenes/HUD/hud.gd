@@ -2,7 +2,7 @@ extends CanvasLayer
 
 static var texture = load("res://Assets/Images/Ship/life.png")
 
-func _process(delta):
+func _process(_delta):
 	$MarginContainer/Score.text = "Score: " + str(Global.score)
 
 func set_health(health):
