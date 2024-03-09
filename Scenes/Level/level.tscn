@@ -31,7 +31,7 @@ offset_bottom = 40.0
 texture = ExtResource("2_o8wi1")
 
 [node name="Player" parent="." instance=ExtResource("1_8qg1i")]
-position = Vector2(364, 304)
+position = Vector2(516, 640)
 
 [node name="Borders" type="Node2D" parent="."]
 visible = false
