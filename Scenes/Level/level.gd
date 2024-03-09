@@ -4,6 +4,7 @@ var asteroid_scene: PackedScene = load("res://Scenes/Asteroid/asteroid.tscn")
 var laser_scene: PackedScene = load("res://Scenes/Weapons/laser.tscn")
 var missile_scene: PackedScene = load("res://Scenes/Weapons/missile.tscn")
 
+var health: int = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,6 +23,7 @@ func initialise_game():
 
 	set_borders(viewport.width, viewport.height)
 	set_background(viewport.width, viewport.height, true)
+	get_tree().call_group('HUD', 'set_health', health)
 
 # Runs when the viewport is resized to ensure background and borders scale properly
 func viewport_resized():
@@ -88,6 +90,16 @@ func _on_asteroid_timeout_timeout():
 	var asteroid = asteroid_scene.instantiate()
 	$Asteroids.add_child(asteroid)
 
+	asteroid.connect('collision_with_player', _on_asteroid_collision_with_player)
+
+func _on_asteroid_collision_with_player():
+	print("asteroid collided with player in level")
+	
+	get_tree().call_group('HUD', 'set_health', health)
+	
+	health -= 1
+	if (health < 0):
+		get_tree().change_scene_to_file("res://Scenes/GameOver/game_over.tscn")
 
 func _on_distance_to_planet_timer_timeout():
 	$AsteroidTimeout.stop()

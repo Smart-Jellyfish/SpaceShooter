@@ -1,9 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://drnafkl6qgsw2"]
 
+[ext_resource type="Script" path="res://Scenes/HUD/hud.gd" id="1_27fas"]
 [ext_resource type="FontFile" uid="uid://bs58wwt64lkth" path="res://Assets/Fonts/subatomictsoonami.ttf" id="1_ptgwt"]
-[ext_resource type="Texture2D" uid="uid://btd45o07hve0u" path="res://Assets/Images/Ship/life.png" id="2_h8iee"]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" groups=["HUD"]]
+script = ExtResource("1_27fas")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 5
@@ -33,25 +34,5 @@ offset_top = -71.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
+[node name="LifeContainer" type="HBoxContainer" parent="MarginContainer2"]
 layout_mode = 2
-
-[node name="Life1" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_h8iee")
-
-[node name="Life2" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_h8iee")
-
-[node name="Life3" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_h8iee")
-
-[node name="Life4" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_h8iee")
-
-[node name="Life5" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_h8iee")

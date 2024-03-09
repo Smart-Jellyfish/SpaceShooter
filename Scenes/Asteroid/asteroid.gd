@@ -5,6 +5,7 @@ var rotate_clockwise: bool
 var velocity: float
 var direction_x: float
 
+signal collision_with_player
 # TODO - Randomise the Asteroid graphic
 
 # Called when the node enters the scene tree for the first time.
@@ -25,6 +26,8 @@ func _ready():
 	var random_x = randi_range(0, width)
 	var random_y = randi_range(-150, 50)
 	position = Vector2(random_x, random_y)
+	
+	
 
 func _process(delta):
 		position += Vector2(direction_x, 1.0) * velocity * delta
@@ -40,4 +43,4 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 
 func _on_body_entered(body):
-	print(str(body) + " hit an asteroid")
+	collision_with_player.emit()
