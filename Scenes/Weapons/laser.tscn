@@ -9,11 +9,14 @@ size = Vector2(2, 9)
 [node name="laser" type="Area2D"]
 light_mask = 8
 visibility_layer = 2
+collision_layer = 8
+collision_mask = 2
 script = ExtResource("1_1owvn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_c060o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_blsvv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

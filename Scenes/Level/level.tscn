@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cq5l5aa2ugmc" path="res://Scenes/Player/player.tscn" id="1_8qg1i"]
 [ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_nhu14"]
 [ext_resource type="Texture2D" uid="uid://6jgj0vxm481j" path="res://Assets/Images/Backgrounds/Nebulas/Nebula_24.png" id="2_o8wi1"]
-[ext_resource type="FontFile" uid="uid://bjskkesnjq2" path="res://Assets/Fonts/pixel-highscore.ttf" id="4_wyme7"]
+[ext_resource type="PackedScene" uid="uid://drnafkl6qgsw2" path="res://Scenes/HUD/hud.tscn" id="4_0k1ba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hndov"]
 size = Vector2(10, 10)
@@ -69,40 +69,8 @@ metadata/_edit_lock_ = true
 [node name="Weapons" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PlanetDistance" type="Label" parent="CanvasLayer"]
-offset_right = 213.0
-offset_bottom = 25.0
-theme_override_fonts/font = ExtResource("4_wyme7")
-text = "Planet: 9999"
-
-[node name="Score" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_wyme7")
-text = "SCORE: 1234"
-
-[node name="Lives" type="Label" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -114.0
-offset_bottom = 25.0
-grow_horizontal = 0
-theme_override_fonts/font = ExtResource("4_wyme7")
-text = "Lives: 3"
-
-[node name="DistanceToPlanetTimer" type="Timer" parent="."]
-wait_time = 999.0
-autostart = true
+[node name="HUD" parent="." instance=ExtResource("4_0k1ba")]
 
 [connection signal="timeout" from="AsteroidTimeout" to="." method="_on_asteroid_timeout_timeout"]
 [connection signal="laser_fired" from="Player" to="." method="_on_player_laser_fired"]
 [connection signal="misslile_fired" from="Player" to="." method="_on_player_misslile_fired"]
-[connection signal="timeout" from="DistanceToPlanetTimer" to="." method="_on_distance_to_planet_timer_timeout"]

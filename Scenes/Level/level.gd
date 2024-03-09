@@ -4,12 +4,14 @@ var asteroid_scene: PackedScene = load("res://Scenes/Asteroid/asteroid.tscn")
 var laser_scene: PackedScene = load("res://Scenes/Weapons/laser.tscn")
 var missile_scene: PackedScene = load("res://Scenes/Weapons/missile.tscn")
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	initialise_game()
 
 func _process(delta):
-	$CanvasLayer/PlanetDistance.text = "Planet: " + str(snappedf($DistanceToPlanetTimer.time_left, 0.01))
+	pass
+	#$CanvasLayer/PlanetDistance.text = "Planet: " + str(snappedf($DistanceToPlanetTimer.time_left, 0.01))
 
 # Initialises the game.
 func initialise_game():
@@ -88,4 +90,7 @@ func _on_asteroid_timeout_timeout():
 
 
 func _on_distance_to_planet_timer_timeout():
+	$AsteroidTimeout.stop()
+	
+	# TODO - spawn a planet
 	print("planet is here")

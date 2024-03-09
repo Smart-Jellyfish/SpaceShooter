@@ -16,7 +16,7 @@ func _ready():
 	rotate_clockwise = randi_range(0, 100) % 2 == 1 
 	
 	# Set a random velocity
-	velocity = randf_range(200, 500)
+	velocity = randf_range(20, 50)
 	
 	direction_x = randf_range(-1, 1)
 	
@@ -37,3 +37,7 @@ func _physics_process(delta):
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	call_deferred("free")
+
+
+func _on_body_entered(body):
+	print(str(body) + " hit an asteroid")

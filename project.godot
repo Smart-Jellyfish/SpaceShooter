@@ -21,7 +21,6 @@ config/icon="res://icon.png"
 
 window/size/viewport_width=1280
 window/size/viewport_height=1016
-window/size/mode=3
 
 [dotnet]
 
